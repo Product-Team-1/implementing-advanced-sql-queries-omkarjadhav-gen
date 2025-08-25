@@ -1,0 +1,153 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Task 1
+      id: task-1
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Task 1
+        setup-command: npm install
+        command: npm run test1
+        input: ''
+        expected-output: '[{"Gender":"Female","AvgPosts":302.77777777777777},{"Gender":"Male","AvgPosts":206.25},{"Gender":"Other","AvgPosts":258.3333333333333}]'
+        comparison-method: contains
+        timeout: 3
+        max-score: 1
+    - name: Task 2
+      id: task-2
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Task 2
+        setup-command: npm install
+        command: npm run test2
+        input: ''
+        expected-output: '[{"Gender":"Female","AvgPosts":371.42857142857144},{"Gender":"Male","AvgPosts":263.3333333333333},{"Gender":"Other","AvgPosts":340}]'
+        comparison-method: contains
+        timeout: 3
+        max-score: 1
+    - name: Task 3
+      id: task-3
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Task 3
+        setup-command: npm install
+        command: npm run test3
+        input: ''
+        expected-output: '[{"Gender":"Female","AvgPosts":302.77777777777777},{"Gender":"Male","AvgPosts":206.25},{"Gender":"Other","AvgPosts":258.3333333333333}]'
+        comparison-method: contains
+        timeout: 3
+        max-score: 1
+    - name: Task 4
+      id: task-4
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Task 4
+        setup-command: npm install
+        command: npm run test4
+        input: ''
+        expected-output: '[{"Gender":"Female","TotalLikes":9750},{"Gender":"Male","TotalLikes":6400},{"Gender":"Other","TotalLikes":3200}]'
+        comparison-method: contains
+        timeout: 3
+        max-score: 1
+    - name: Task 5
+      id: task-5
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Task 5
+        setup-command: npm install
+        command: npm run test5
+        input: ''
+        expected-output: '[{"User_Name":"Emma Johnson","PostContent":null},{"User_Name":"Chris
+          Roberts","PostContent":null},{"User_Name":"Jordan Lee","PostContent":"Delicious
+          recipe alert! Try our new chocolate cake recipe!"},{"User_Name":"Alex Smith","PostContent":null},{"User_Name":"Taylor
+          Brown","PostContent":null},{"User_Name":"Sam Jones","PostContent":null},{"User_Name":"Avery
+          Garcia","PostContent":"Check out the new trailer for #MovieX! Exciting stuff!"},{"User_Name":"Robin
+          Clark","PostContent":null},{"User_Name":"Casey Miller","PostContent":null},{"User_Name":"Eli
+          Wilson","PostContent":null},{"User_Name":"Riley Rodriguez","PostContent":null},{"User_Name":"Harper
+          Thompson","PostContent":"5-minute ab workout you can do at home! #Fitness"},{"User_Name":"Jamie
+          Hall","PostContent":null},{"User_Name":"Skylar White","PostContent":null},{"User_Name":"Quinn
+          Scott","PostContent":"Top 10 summer fashion trends you can''t miss! #Fashion"},{"User_Name":"Dakota
+          Martin","PostContent":null},{"User_Name":"Avery Gomez","PostContent":null},{"User_Name":"Jordan
+          Hernandez","PostContent":"Breaking: New smartphone model leaked! #TechNews"},{"User_Name":"Sasha
+          Lee","PostContent":null},{"User_Name":"Riley Wood","PostContent":null}]'
+        comparison-method: contains
+        timeout: 3
+        max-score: 1
+    - name: Task 6
+      id: task-6
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Task 6
+        setup-command: npm install
+        command: npm run test6
+        input: ''
+        expected-output: '[{"Gender":"Female","TotalPostLikes":2758},{"Gender":"Male","TotalPostLikes":996},{"Gender":"Other","TotalPostLikes":987}]'
+        comparison-method: contains
+        timeout: 3
+        max-score: 1
+    - name: Task 7
+      id: task-7
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Task 7
+        setup-command: npm install
+        command: npm run test7
+        input: ''
+        expected-output: '[{"User_Name":"Avery Garcia","PostContent":"Check out the
+          new trailer for #MovieX! Exciting stuff!"},{"User_Name":"Jordan Lee","PostContent":"Delicious
+          recipe alert! Try our new chocolate cake recipe!"},{"User_Name":"Harper
+          Thompson","PostContent":"5-minute ab workout you can do at home! #Fitness"},{"User_Name":"Jordan
+          Hernandez","PostContent":"Breaking: New smartphone model leaked! #TechNews"}]'
+        comparison-method: contains
+        timeout: 3
+        max-score: 1
+    - name: Task 8
+      id: task-8
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Task 8
+        setup-command: npm install
+        command: npm run test8
+        input: ''
+        expected-output: '[{"User_Name":"Alex Smith","PostContent":null},{"User_Name":"Avery
+          Garcia","PostContent":"Check out the new trailer for #MovieX! Exciting stuff!"},{"User_Name":"Avery
+          Gomez","PostContent":null},{"User_Name":"Casey Miller","PostContent":null},{"User_Name":"Chris
+          Roberts","PostContent":null},{"User_Name":"Dakota Martin","PostContent":null},{"User_Name":"Eli
+          Wilson","PostContent":null},{"User_Name":"Emma Johnson","PostContent":null},{"User_Name":"Harper
+          Thompson","PostContent":"5-minute ab workout you can do at home! #Fitness"},{"User_Name":"Jamie
+          Hall","PostContent":null},{"User_Name":"Jordan Hernandez","PostContent":"Breaking:
+          New smartphone model leaked! #TechNews"},{"User_Name":"Jordan Lee","PostContent":"Delicious
+          recipe alert! Try our new chocolate cake recipe!"},{"User_Name":"Quinn Scott","PostContent":"Top
+          10 summer fashion trends you can''t miss! #Fashion"},{"User_Name":"Riley
+          Rodriguez","PostContent":null},{"User_Name":"Riley Wood","PostContent":null},{"User_Name":"Robin
+          Clark","PostContent":null},{"User_Name":"Sam Jones","PostContent":null},{"User_Name":"Sasha
+          Lee","PostContent":null},{"User_Name":"Skylar White","PostContent":null},{"User_Name":"Taylor
+          Brown","PostContent":null}]'
+        comparison-method: contains
+        timeout: 3
+        max-score: 1
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TASK-1_RESULTS: "${{steps.task-1.outputs.result}}"
+        TASK-2_RESULTS: "${{steps.task-2.outputs.result}}"
+        TASK-3_RESULTS: "${{steps.task-3.outputs.result}}"
+        TASK-4_RESULTS: "${{steps.task-4.outputs.result}}"
+        TASK-5_RESULTS: "${{steps.task-5.outputs.result}}"
+        TASK-6_RESULTS: "${{steps.task-6.outputs.result}}"
+        TASK-7_RESULTS: "${{steps.task-7.outputs.result}}"
+        TASK-8_RESULTS: "${{steps.task-8.outputs.result}}"
+      with:
+        runners: task-1,task-2,task-3,task-4,task-5,task-6,task-7,task-8
