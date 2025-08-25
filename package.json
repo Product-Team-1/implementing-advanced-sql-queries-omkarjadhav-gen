@@ -1,0 +1,19 @@
+{
+  "name": "knex-sql-lab",
+  "version": "1.0.0",
+  "description": "Lab to practice advanced SQL queries with Knex.js and SQLite",
+  "scripts": {
+    "test1": "node learner/query1.js",
+    "test2": "node learner/query2.js",
+    "test3": "node learner/query3.js",
+    "test4": "node learner/query4.js",
+    "test5": "node learner/query5.js",
+    "test6": "node learner/query6.js",
+    "test7": "node learner/query7.js",
+    "test8": "node learner/query8.js"
+  },
+  "dependencies": {
+    "knex": "^2.5.1",
+    "sqlite3": "^5.1.6"
+  }
+}
